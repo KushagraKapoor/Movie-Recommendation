@@ -1,0 +1,85 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended Movies</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image:url("{% static 'background.jpg' %}"); /* Replace 'background.jpg' with your actual background image */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Box shadow for depth */
+            overflow: hidden; /* Ensures content does not overflow */
+        }
+        .movie {
+            display: inline-block;
+            width: 200px;
+            margin-right: 20px;
+            background-color: rgba(255, 255, 255, 0.1); /* Transparent background for each movie */
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+            overflow: hidden; /* Ensures content does not overflow */
+        }
+        .movie img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .movie p {
+            font-size: 16px;
+            margin: 0;
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+        }
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+        .nav-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .nav-links a {
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-links">
+            <a href="{% url 'login_auth:home' %}">Home</a>
+            <a href="{% url 'login_auth:logout' %}">Logout</a>
+        </div>
+        <h1>Recommended Movies</h1>
+        <div id="recommendations">
+            {% for recommendation in recommendations %}
+                <div class="movie">
+                    <a href="{% url 'login_auth:movie_info' recommendation.title %}">
+                        <img src="{{ recommendation.image }}" alt="{{ recommendation.title }}">
+                    </a>
+                    <p>{{ recommendation.title }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
