@@ -4,11 +4,11 @@ This project is a Django-based movie recommendation system that utilizes a cosin
 
 ## Screenshots
 
-![Homepage](Screenshot (191).png)
+![Homepage](/Screenshot (191).png)
 
-![Movie Details](Screenshot (192).png)
+![Movie Details](/Screenshot (192).png)
 
-![Recommendations](Screenshot (193).png)
+![Recommendations](/Screenshot (193).png)
 
 
 ## Features
