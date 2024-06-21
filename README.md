@@ -2,6 +2,15 @@
 
 This project is a Django-based movie recommendation system that utilizes a cosine similarity model to provide personalized movie recommendations to users. The system includes user authentication, movie details views, and enhanced recommendation algorithms based on director and actor matches.
 
+## Screenshots
+
+![Homepage](https://example.com/screenshots/homepage.png)
+
+![Movie Details](https://example.com/screenshots/movie_details.png)
+
+![Recommendations](https://example.com/screenshots/recommendations.png)
+
+
 ## Features
 
 - User authentication: Users can sign up, log in, and log out of the system.
